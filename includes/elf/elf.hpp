@@ -17,7 +17,7 @@ namespace elf {
 		EI_NIDENT     = 16
 	};
 
-	struct elf_ehdr_32_t {
+	struct elf32_ehdr_t {
 		uint8_t  e_ident[ EI_NIDENT ];
 		uint16_t e_type;
 		uint16_t e_machine;
@@ -34,7 +34,7 @@ namespace elf {
 		uint16_t e_shstrndx;
 	};
 
-	struct elf_ehdr_64_t {
+	struct elf64_ehdr_t {
 		uint8_t  e_ident[ EI_NIDENT ];
 		uint16_t e_type;
 		uint16_t e_machine;
@@ -263,7 +263,7 @@ namespace elf {
 		EM_CSR_KALIMBA	 = 219
 	};
 
-	struct elf_phdr_32_t {
+	struct elf32_phdr_t {
 		uint32_t p_type;
 		uint32_t p_offset;
 		uint32_t p_vaddr;
@@ -274,7 +274,7 @@ namespace elf {
 		uint32_t p_align;
 	};
 
-	struct elf_phdr_64_t {
+	struct elf64_phdr_t {
 		uint32_t p_type;
 		uint32_t p_flags;
 		uint64_t p_offset;
