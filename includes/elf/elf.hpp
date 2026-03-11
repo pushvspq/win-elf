@@ -17,6 +17,11 @@ namespace elf {
 		EI_NIDENT     = 16
 	};
 
+	inline constexpr uint8_t ELFMAG0 = 0x7F;
+	inline constexpr uint8_t ELFMAG1 = 'E';
+	inline constexpr uint8_t ELFMAG2 = 'L';
+	inline constexpr uint8_t ELFMAG3 = 'F';
+
 	struct elf32_ehdr_t {
 		uint8_t  e_ident[ EI_NIDENT ];
 		uint16_t e_type;
@@ -644,3 +649,7 @@ namespace elf {
 	inline constexpr uint32_t PROT_WRITE = 0x2;
 	inline constexpr uint32_t PROT_EXEC	 = 0x4;
 } // namespace elf
+
+#ifndef ELFMAG
+#define	ELFMAG "\177ELF"
+#endif // ELFMAG
